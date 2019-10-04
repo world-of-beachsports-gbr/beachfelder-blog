@@ -1,0 +1,26 @@
+{
+  "name": "beachfelder-blog",
+  "version": "0.0.1",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/sdvwerbestudio/landingpage-oktoberaktion-2019.git"
+  },
+  "author": "Fabian Pecher & Leo Schreck",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/sdvwerbestudio/landingpage-oktoberaktion-2019#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0"
+  }
+}
