@@ -32,9 +32,7 @@ gulp.task("minify", ()=> {
 
 //BROWSERSYNC SETUP
 gulp.task("browserSync", () =>
-  browserSync.init({
-    proxy: "http://aha-lp.devsite"
-  })
+  browserSync.init()
 );
 
 gulp.task("dev", ["browserSync", "sass"], () => {

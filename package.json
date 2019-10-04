@@ -1,6 +1,6 @@
 {
   "name": "beachfelder-blog",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/sdvwerbestudio/landingpage-oktoberaktion-2019.git"
+    "url": "git@github.com:world-of-beachsports-gbr/beachfelder-blog.git"
   },
-  "author": "Fabian Pecher & Leo Schreck",
+  "author": "Fabian Pecher",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/sdvwerbestudio/landingpage-oktoberaktion-2019#readme",
+  "homepage": "https://world-of-beachsports.com",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^3.9.1",
