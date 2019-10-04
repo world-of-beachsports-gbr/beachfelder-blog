@@ -1,0 +1,5 @@
+@import '../setup/color-palette.map';
+
+@each $color-name, $color in $colors {
+  .-text-color-#{$color-name} {color: $color }
+}

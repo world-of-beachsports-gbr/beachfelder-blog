@@ -1,0 +1,4 @@
+@mixin -dimension($width: null, $height: null) {
+	width: $width;
+	height: $height;
+}

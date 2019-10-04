@@ -1,0 +1,24 @@
+@import 'pxtorem';
+
+//COLORS
+$color-palette-black-01:	#000 !default;
+$color-palette-white-01:	#FFF !default;
+$color-palette-red-01:    #E31319 !default;
+$color-palette-gray-01:   #878786 !default;
+$color-palette-gray-02:   #F7F7F7 !default;
+
+//SIZES
+$typo-headline-01:      rem(40px) !default;
+$typo-headline-01-s:    rem(50px) !default;
+
+$typo-headline-02:      rem(30px) !default;
+$typo-headline-02-s:    rem(35px) !default;
+
+$typo-headline-03:      rem(20px) !default;
+$typo-headline-03-s:    rem(25px) !default;
+
+$typo-copy:             rem(20px) !default;
+
+//LINEHEIGHTS
+$line-height-copy:				1.5 !default;
+$line-height-headline:		1.3 !default;

@@ -1,0 +1,24 @@
+@import '../setup/color-palette.map';
+
+$colors: $colors !default;
+
+@function color($color) {
+  @if map-has-key($colors, $color) {
+    @return map-get($colors, $color);
+  }
+
+  @error "Farbe `#{$color}` ist nicht in der Map $colors.";
+  @return null;
+}
+
+@mixin -background-color( $background-color: null, $opacity: null ) {
+
+  @if ( $opacity == null ) or ( $opacity == 1 ) {
+    background-color: color($background-color);
+  }
+
+  @else {
+    background-color: color( $background-color ); // Fallback
+    background-color: rgba( color($background-color), $opacity );
+  }
+}
