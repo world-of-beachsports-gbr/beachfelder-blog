@@ -1,0 +1,37 @@
+@import '../../mixins/text-color.mixin';
+@import '../../mixins/font-size.mixin';
+@import '../../mixins/spacing.mixin';
+@import '../../mixins/display.mixin';
+@import '../../setup/pxtorem';
+
+.list-tags {
+
+  &__item {
+    @include -display(inline-block);
+    @include -spacing-inner('left', 5px);
+    @include -spacing-inner('right', 5px);
+    @include -spacing-inner('top', 2px);
+
+    &:not(:first-of-type) {
+      @include -spacing-inner('left', 10px);
+    }
+  }
+
+  &__icon {
+    @include -text-color('green-01');
+    @include -font-size(18);
+    vertical-align: middle;
+  }
+
+  &__link {
+    @include -font-primary;
+    @include -text-color('blue-02');
+
+    margin-left: rem(5px);
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      @include -text-color('green-01');
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import '../../mixins/font-size.mixin';
+@import '../../mixins/text-color.mixin';
+@import '../../mixins/spacing.mixin';
+
+.has-medium-font-size {
+  @include -font-primary;
+  @include -text-color('blue-02');
+  line-height: 1.35;
+}
+
+.wp-block-image {
+  figcaption {
+    @include -font-primary;
+    @include -text-color('blue-02');
+    @include -font-size(14);
+  }
+}
+
+.blocks-gallery-item {
+  figure {
+    figcaption {
+      @include -font-primary;
+    }
+  }
+}
+
+.wp-block-table {
+  @include -font-primary;
+  @include -text-color('blue-02');
+
+  tr {
+    td {
+      @include -spacing-inner('top', 10);
+      @include -spacing-inner('bottom', 10);
+    }
+  }
+}
+
+.alignfull {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc( 50% - 50vw);
+}

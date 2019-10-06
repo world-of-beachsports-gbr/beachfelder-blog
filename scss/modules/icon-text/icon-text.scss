@@ -1,0 +1,34 @@
+@import '../../mixins/text-color.mixin';
+@import '../../mixins/font-size.mixin';
+@import '../../mixins/display.mixin';
+@import '../../mixins/font.mixin';
+
+@import 'icon-text.setup';
+
+.icon-text {
+  position: relative;
+  display: inline-block;
+
+  &:not(:first-of-type) {
+    margin-left: $icon-text-outer-spacing-left;
+  }
+  
+  &__icon {
+    @include -text-color('green-01');
+    @include -font-size(20);
+
+    position: absolute;
+    left: $icon-text-icon-position-reset;
+    top: $icon-text-icon-position-reset;
+  }
+
+  &__label {
+    @include -text-color('blue-02');
+    @include -display(block);
+    @include -font-primary;
+    @include -typo-copy;
+
+    line-height: $icon-text-label-line-height;
+    margin-left: $icon-text-label-position-left;
+  }
+}

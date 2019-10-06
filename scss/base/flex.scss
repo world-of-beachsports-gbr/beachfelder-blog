@@ -1,0 +1,47 @@
+@import '../mixins/flex.mixin';
+@import '../mixins/breakpoint.mixin';
+
+
+.-flex {
+	@include -flex;
+
+	&-xs {
+		@include breakpoint('xs') { @include -flex; }
+	}
+
+	&-s {
+		@include breakpoint('s') { @include -flex; }
+	}
+
+	&-m {
+		@include breakpoint('m') { @include -flex; }
+	}
+
+	&-l {
+		@include breakpoint('l') { @include -flex; }
+	}
+
+	// displays as column
+	&--column { @include -flex-direction(column); }
+
+	// displays as row
+	&--row { @include -flex-direction(row); }
+
+	// center things vertically
+	&--center-vertical { @include -flex-align-items(center); }
+
+	// center things horizontally
+	&--center-horizontal { @include -flex-justify-content(center); }
+
+	// revese columns
+	&--column-reverse { @include -flex-direction(column-reverse); }
+
+	// revese rows
+	&--row-reverse { @include -flex-direction(row-reverse); }
+
+	// wraps the rows
+	&--row-wrap { @include -flex-wrap(wrap); }
+
+	// grows elements via flex-grow
+	&--grow { @include -flex-grow(1); }
+}

@@ -1,0 +1,57 @@
+@import '../../mixins/background-color.mixin';
+@import '../../mixins/opacity.mixin';
+@import '../../mixins/display.mixin';
+@import '../../mixins/spacing.mixin';
+
+@import 'header.setup';
+
+.header {
+  @include -spacing-inner('top', 15);
+  @include -spacing-inner('bottom', 15);
+  @include -spacing-inner('left', 15);
+  @include -spacing-inner('right', 15);
+
+  background: transparent;
+  width: $header-width;
+  box-sizing: border-box;
+  
+  &--fixed {
+    @include -background-color('white');
+
+    position: fixed;
+    top: $header-fixed-position-top;
+    left: $header-fixed-position-left;
+    box-shadow: $header-fixed-box-shadow;
+    z-index: $header-fixed-z-index;
+  }
+
+  &__signet {
+    max-width: $header-signet-max-width;
+  }
+
+  &__input .input__field {
+    @include -spacing-inner('left', 10px);
+    
+    background: $header-input-field-background-color;
+    border-radius: $header-input-field-border-radius;
+  }
+
+  &__input .input__label {
+    left: $header-input-label-position-left;
+  }
+
+  &__input .input__icon {
+    color: $header-input-icon-color;
+  }
+
+  &__input .input__field:not(:placeholder-shown) ~ .input__label {
+    left: $header-input-label-position-left;
+  }
+
+  &__column {
+    
+    &--hidden {
+      @include -display(none);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import 'image-hero.setup';
+
+.image-hero {
+  position: relative;
+  width: $image-hero-width;
+  height: $image-hero-height;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &--half {
+    height: $image-hero-half-height;
+  }
+}

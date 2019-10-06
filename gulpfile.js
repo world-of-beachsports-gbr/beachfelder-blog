@@ -14,12 +14,12 @@ gulp.task("sass", () => {
     .src("scss/**/main.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(autoprefixer("last 2 version"))
-    .pipe(gulp.dest("assets/css"))
-    .pipe(
-      browserSync.reload({
-        stream: true
-      })
-    );
+    .pipe(gulp.dest("assets/css"));
+    // .pipe(
+    //   browserSync.reload({
+    //     stream: true
+    //   })
+    // );
 });
 
 gulp.task("minify", ()=> {

@@ -1,0 +1,73 @@
+@import '../../mixins/background-color.mixin';
+@import '../../mixins/text-color.mixin';
+@import '../../mixins/font-size.mixin';
+@import '../../mixins/display.mixin';
+@import '../../mixins/spacing.mixin';
+
+@import 'input-radio.setup';
+
+.input-radio {
+  @include -display(inline-block);
+
+  $bem-block: &;
+
+  &__field {
+    @include -display(none);
+
+    appearance: none;
+  }
+
+  &__label {
+    @include -spacing-inner('left', 30);
+    @include -spacing-inner('right', 35);
+    @include -display(inline-block);
+    @include -text-color('blue-02');
+    @include -font-size(16);
+    @include -font-primary;
+
+    line-height: $input-radio-label-line-height;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      @include -background-color('white');
+
+      content: '';
+      position: absolute;
+      //background: transparent;
+      left: $input-radio-label-before-position-left;
+      top: $input-radio-label-before-position-top;
+      width: $input-radio-label-before-dimension;
+      height: $input-radio-label-before-dimension;
+      border-radius: $input-radio-label-before-border-radius;
+      transition: all .3s ease-in-out;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: $input-radio-label-after-position-left;
+      top: $input-radio-label-after-position-top;
+      width: $input-radio-label-after-dimension;
+      height: $input-radio-label-after-dimension;
+      border-radius: $input-radio-label-after-border-radius;
+      border: $input-radio-label-after-border-width $input-radio-label-after-border-color solid;
+      z-index: -1;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  #{$bem-block}__field:checked + #{$bem-block}__label::before {
+    @include -background-color('green-01');
+  }
+
+  #{$bem-block}__field:disabled + #{$bem-block}__label {
+    @include -text-color('gray-03');
+    cursor: default;
+  }
+
+  #{$bem-block}__field:disabled + #{$bem-block}__label::before {
+    @include -background-color('gray-03');
+    cursor: default;
+  }
+}

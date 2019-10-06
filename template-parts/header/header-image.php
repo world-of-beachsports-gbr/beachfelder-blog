@@ -1,0 +1,1 @@
+<div class="image-hero image-hero--half" style="background-image: url('http://localhost:8888/blog-beachfelder/wp-content/uploads/2019/10/martin-misere-BVB-3683_overlay-white-50.jpg');"></div>

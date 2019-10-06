@@ -1,0 +1,31 @@
+@import '../../mixins/text-color.mixin';
+@import '../../mixins/font-size.mixin';
+@import '../../mixins/text-align.mixin';
+@import '../../mixins/spacing.mixin';
+@import '../../mixins/display.mixin';
+
+@import 'navigation-main.setup';
+
+.navigation-main {
+  @include -text-align(center);
+  height: $navigation-main-height;
+
+  &__item {
+    @include -display(inline-block);
+  }
+
+  &__link {
+    @include -spacing-inner('left', 10px);
+    @include -spacing-inner('right', 10px);
+    @include -text-color('blue-02');
+    @include -font-primary;
+    @include -font-size(16);
+
+    transition: color .2s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+      @include -text-color('green-01');
+    }
+  }
+}

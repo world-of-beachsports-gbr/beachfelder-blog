@@ -1,0 +1,34 @@
+@import '../../mixins/font.mixin';
+
+@import 'link-text.setup';
+
+.link-text {
+  @include -font-primary;
+
+  position: relative;
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+
+  &::before {
+    @include -background-color('gray-02');
+    
+    position: absolute;
+    content: '';
+    width: $link-text-before-width;
+    height: $link-text-before-height;
+    left: $link-text-before-position-reset;
+    bottom: $link-text-before-position-reset;
+    z-index: -$link-text-before-z-index;
+    transition: width .3s ease-in-out;
+  }
+
+  &:hover {
+    @include -text-color('green-01');
+    
+    &::before {
+      width: $link-text-before-width-hovered;
+    }
+  }
+}
