@@ -9,11 +9,18 @@
 @import 'item-news.setup';
 
 .item-news {
+  $bem-block: &;
+
   border-radius: $item-news-border-radius;
   box-shadow: $item-news-box-shadow;
   overflow: hidden;
-
-  $bem-block: &;
+  transition: .4s ease-in-out;
+  
+  @include breakpoint('m') {
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
   
   &__image-container  {
     position: relative;
@@ -89,5 +96,10 @@
     @include -font-primary;
 
     font-weight: $item-news-link-font-weight;
+    transition: .2s ease-in-out;
+
+    &:hover {
+      transform: translateX(5px);
+    }
   }
 }

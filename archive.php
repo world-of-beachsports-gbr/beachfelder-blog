@@ -1,16 +1,8 @@
 <?php
-/**
- * The main template file
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package bfde
- * @subpackage bfde
- * @since 1.0.0
- */
 
-get_header();
-// get all the categories from the database
-$cats = get_categories();
+  get_header();
+  // get all the categories from the database
+  $cats = get_categories();
 ?>
 
 <div class="content">
@@ -20,7 +12,7 @@ $cats = get_categories();
   ?>
     <div class="row">
       <div class="column column--12 column--s-6 -spacing-outer-70">
-        <h2 class="-typo-headline-02 -text-color-blue-01 -font-secondary">Neues aus dem Resort: <span class="-text-color-green-01"><?= $cat->name; ?></span></h2>
+        <h2 class="-typo-headline-02 -text-color-blue-01 -font-secondary">Alles aus dem Resort: <span class="-text-color-green-01"><?= $cat->name; ?></span></h2>
       </div>
       <?php if ($cat->category_description !='') : ?> 
         <div class="column column--12 column--s-6 -spacing-outer-70">

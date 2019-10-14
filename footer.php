@@ -1,18 +1,40 @@
   <?php wp_footer(); ?>
-  <div class="content">
-    <div class="row">
-      <div class="column--12 -spacing-outer-100">
-        <?php get_template_part( 'template-parts/footer/footer', 'advertising' ); ?>
-      </div>
-    </div>
-  </div>
-  <footer class="footer">
+  
+  <?php get_template_part( 'template-parts/sections/section' , 'newsletter' ); ?>
+
+  <?php if (!is_404() ): ?>
     <div class="content">
       <div class="row">
-        <div class="column column--12">
-          <hr class="divider -spacing-outer-100">
+        <div class="column column--12 column--s-4 -spacing-outer-100">
+          <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+            <?php get_template_part( 'template-parts/footer/footer', 'widget-1' ); ?>
+          <?php endif; ?>
+        </div>
+        <div class="column column--12 column--s-4 -spacing-outer-100">
+          <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+            <?php get_template_part( 'template-parts/footer/footer', 'widget-2' ); ?>
+          <?php endif; ?>
+        </div>
+        <div class="column column--12 column--s-4 -spacing-outer-100">
+          <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+            <?php get_template_part( 'template-parts/footer/footer', 'widget-3' ); ?>
+          <?php else : ?>
+            <?php get_template_part( 'template-parts/footer/footer', 'advertising' ); ?>
+          <?php endif; ?>
         </div>
       </div>
+    </div><!-- .content ENDE -->
+  <?php endif; ?>
+
+  <footer class="footer">
+    <div class="content">
+      <?php if (!is_404() ): ?>
+        <div class="row">
+          <div class="column column--12">
+            <hr class="divider -spacing-outer-100">
+          </div>
+        </div>
+      <?php endif; ?>
       <div class="row ">
         <div class="column column--12">
           <a href="https://www.instagram.com/beachfelder.de/" target="_blank" class="link-icon -spacing-outer-20  link-icon--has-shadow">
@@ -31,7 +53,7 @@
       <div class="row">
         <div class="column column--12">
           <p class="footer__paragraph">
-            © <?php echo date("Y"); ?> World of Beachsport GbR
+            © <?php echo date('Y'); ?> World of Beachsport GbR
           </p>
         </div>
       </div>

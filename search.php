@@ -1,15 +1,52 @@
-<?php get_header(); ?>
+<?php
+  get_header();
+
+  global $wp_query;
+?>
 <div class="content">
   <div class="row">
-    <div class="column column--12">
-      <?php if ( have_posts() ) : ?>
-        <?php while ( have_posts() ) : the_post(); ?>
-          <?php the_excerpt(); ?>
-        <?php endwhile; ?>
-      <?php else: ?>
-        <p class="-typo-copy -font-primary -text-color-blue-02"> leider wurde nichts gefunden</p>
-      <?php endif; ?>
+    <div class="column column--12 -spacing-outer-50">
+      <h1 class="-typo-headline-02 -text-color-blue-01 -font-secondary">
+        <?php
+          if($wp_query->found_posts == 1 ) :
+          $wp_query->found_posts
+        ?>
+          <?= $wp_query->found_posts; ?> Suchergebnis zu:
+        <?php else : ?>
+          <?= $wp_query->found_posts; ?> Suchergebnisse zu:
+        <?php endif; ?>
+        <span class="-text-color-green-01"><?= $s; ?></span>
+      </h1>
     </div>
   </div>
+  
+  <div class="row -flex -flex--row-wrap">
+    <?php while ( have_posts() ) : the_post(); ?>
+      <div class="column column--12 column--s-6 column--m-4 -spacing-outer-50 -flex">
+        <div class="item-news ">
+          <div class="item-news__image-container">
+            <a href="<?php the_permalink(); ?>">
+              <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); ?>
+              <img src="<?= $featured_img_url; ?>" alt="<?php the_title(); ?>" class="item-news__image">
+              <div class="item-news__date"><?php the_date('d.m.Y'); ?></div>
+                <div class="overlay item-news__overlay">
+                  <span class="overlay__icon icon icon--maximize"></span>
+                </div>
+            </a>
+          </div>
+          <div class="item-news__content">
+            <a href="<?php the_permalink(); ?>" class="item-news__title"><?php the_title(); ?></a>
+            <p class="item-news__copy"><?= excerpt(30); ?></p>
+            
+            <a href="<?php the_permalink(); ?>" class="link-icon-text item-news__link">
+              <span class="link-icon-text__icon icon icon--chevron-right"></span>
+              <span class="link-icon-text__copy">weiterlesen</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    <?php endwhile;?>
+  </div>
+  
 </div>
 <?php get_footer(); ?>

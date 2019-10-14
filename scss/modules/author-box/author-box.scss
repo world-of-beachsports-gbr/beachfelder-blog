@@ -1,0 +1,52 @@
+@import '../../mixins/background-color.mixin';
+@import '../../mixins/breakpoint.mixin';
+@import '../../mixins/text-color.mixin';
+@import '../../mixins/font-size.mixin';
+@import '../../mixins/spacing.mixin';
+
+.author-box {
+  //@include -background-color('gray-02');
+  @include -spacing-inner('top', 25);
+  @include -spacing-inner('bottom', 25);
+  @include -spacing-inner('left', 25);
+  @include -spacing-inner('right', 25);
+
+  border-top: 1px #f3f3f3 double;
+  border-radius: 4px;
+
+  &__name {
+    @include -font-secondary;
+    @include -font-size(25);
+    @include -text-color('blue-01');
+
+    text-transform: uppercase;
+  }
+
+  &__details {
+    @include -font-primary;
+    @include -font-size(16);
+    @include -text-color('blue-02');
+    @include -spacing-outer(20);
+    @include -display(flex);
+
+    align-items: center;
+    line-height: 1.5;
+
+    img {
+      border-radius: 50%;
+      float: left;
+      margin: 0 20px 10px 0;
+    }
+  }
+
+  &__link {
+    @include -font-primary;
+    @include -font-size(16);
+    @include -text-color('blue-02');
+    transition: .2s ease-in-out;
+
+    &:hover {
+      @include -text-color('green-01');
+    }
+  }
+}

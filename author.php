@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <div class="content">
   <div class="row">
-    <div class="column column--12 -spacing-outer-50">
-      <h1 class="-typo-headline-02 -text-color-blue-01 -font-secondary">Alles aus dem Resort: <span class="-text-color-green-01"><?php single_cat_title(); ?></span></h1>
+      <div class="column column--12 -spacing-outer-50">
+        <h1 class="-typo-headline-02 -text-color-blue-01 -font-secondary">Alles von: <span class="-text-color-green-01"><?php the_author(); ?></span></h1>
+      </div>
     </div>
-  </div>
-  <div class="row -flex -flex--row-wrap">
+    <div class="row -flex -flex--row-wrap">
     <?php while ( have_posts() ) : the_post(); ?>
       <div class="column column--12 column--s-6 column--m-4 -spacing-outer-50 -flex">
         <div class="item-news ">

@@ -1,0 +1,23 @@
+@import '../../mixins/breakpoint.mixin';
+@import '../../mixins/spacing.mixin';
+@import '../../mixins/flex.mixin';
+
+.section-fullwidth {
+  @include -spacing-inner('top', 30);
+  @include -spacing-inner('bottom', 30);
+
+  @include breakpoint('m') {
+    @include -spacing-inner('top', 50);
+    @include -spacing-inner('bottom', 50);
+  }
+
+  &--404 {
+    @include -display(flex);
+    @include -flex-align-items(center);
+    position: relative;
+    background-image: url('../img/404.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+  }
+}

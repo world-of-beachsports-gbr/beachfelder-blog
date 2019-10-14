@@ -18,7 +18,7 @@
 	border: none;
 
 	&__field {
-		@include -spacing-inner('left', 0);
+		@include -spacing-inner('left', 10);
 		@include -spacing-inner('right', 45);
 		@include -spacing-inner('top', 20);
 		@include -spacing-inner('bottom', 20);
@@ -47,6 +47,10 @@
     transform: translateY(-$input-label-position-top);
     transition: all .2s ease-in-out;
     opacity: $input-label-opacity; 
+
+    &--small {
+      @include -font-size(14);
+    }
 	}
 
 	&__icon {

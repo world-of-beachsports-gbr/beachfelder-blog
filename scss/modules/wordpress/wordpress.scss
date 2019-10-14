@@ -1,6 +1,8 @@
-@import '../../mixins/font-size.mixin';
+@import '../../mixins/background-color.mixin';
 @import '../../mixins/text-color.mixin';
+@import '../../mixins/font-size.mixin';
 @import '../../mixins/spacing.mixin';
+@import '../../mixins/display.mixin';
 
 .has-medium-font-size {
   @include -font-primary;
@@ -40,4 +42,94 @@
   width: 100vw;
   max-width: 100vw;
   margin-left: calc( 50% - 50vw);
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+.widget-column {
+  ul {
+    @include -spacing-outer(15);
+    list-style-type: circle;
+    margin-left: 20px;
+
+    li {
+      @include -font-primary;
+      @include -font-size(16);
+      @include -text-color('blue-02');
+
+      a {
+        @include -font-primary;
+        @include -font-size(16);
+        @include -text-color('blue-02');
+        @include -spacing-inner('top', 3);
+        @include -spacing-inner('bottom', 3);
+        @include -display(inline-block);
+
+        transition: .2s ease-in-out;
+
+        &:hover {
+          @include -text-color('green-01');
+        }
+      }
+    }
+  }
+}
+
+.wp-block-separator {
+  border-bottom: none;
+  border-top: 1px #f3f3f3 solid;
+}
+
+main {
+  ul {
+    @include -spacing-outer(15);
+
+    list-style-type: circle;
+    margin-left: 20px;
+
+    li {
+      @include -typo-copy;
+      @include -font-primary;
+      @include -text-color('blue-02');
+
+      ul {
+        @include -spacing-outer(0);
+        list-style-type: square;
+      }
+    }
+  }
+}
+
+//SEARCH RESULTS SUGGESTIONS
+.ac_results {
+  @include -spacing-inner('top', 20);
+  @include -spacing-inner('bottom', 20);
+  
+  border: none;
+  box-shadow: 0 0 5px rgba(0,0,0, .25);
+
+  li {
+    @include -font-primary;
+    @include -font-size(16);
+    @include -text-color('blue-01');
+    @include -spacing-inner('top', 15);
+    @include -spacing-inner('bottom', 15);
+    @include -spacing-inner('left', 20);
+    @include -spacing-inner('right', 70);
+    @include -display(block);
+
+    background: transparent;
+    transition: .1s ease-in-out;
+    
+    &:not(:last-of-type) {
+      border-bottom: 1px #f3f3f3 solid;
+    }
+
+    &:hover {
+      @include -text-color('green-01');
+      @include -background-color('gray-02');
+    }
+  }
 }

@@ -1,0 +1,44 @@
+@import '../../mixins/text-color.mixin';
+@import '../../mixins/font-size.mixin';
+
+.breadcrumb {
+  
+  a {
+    @include -font-primary;
+    @include -font-size(16);
+    @include -text-color('blue-02');
+
+    &:hover {
+      @include -text-color('green-01');
+    }
+  }
+
+  &__link {
+    @include -font-primary;
+    @include -text-color('blue-02');
+    @include -font-size(16);
+    text-decoration: none;
+    transition: .2s ease-in-out;
+
+    &:hover {
+      @include -text-color('green-01');
+    }
+  }
+  
+  &__label {
+    @include -font-primary;
+    @include -text-color('blue-02');
+    @include -font-size(16);
+  }
+  
+  &__current {
+    @include -font-primary;
+    @include -text-color('blue-02');
+    @include -font-size(16);
+  }
+
+  &__icon {
+    @include -text-color('gray-03');
+    vertical-align: text-top;
+  }
+}

@@ -1,1 +1,7 @@
-<div class="image-hero image-hero--half" style="background-image: url('http://localhost:8888/blog-beachfelder/wp-content/uploads/2019/10/martin-misere-BVB-3683_overlay-white-50.jpg');"></div>
+<?php
+
+if( get_header_image() ) : ?>
+  <div class="image-hero image-hero--half" style="background-image: url('<?php header_image(); ?>');"></div>
+<?php else : ?>
+  <div class="image-hero image-hero--half" style="background-image: url('<?= get_template_directory_uri(); ?>/assets/img/header-fallback.jpg');"></div>
+<?php endif; ?>

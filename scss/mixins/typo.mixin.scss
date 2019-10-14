@@ -6,6 +6,7 @@
   font-size: $typo-headline-01;
   text-transform: uppercase;
   font-weight: normal;
+  line-height: $line-height-headline-01;
 
   @include breakpoint('m') {
     font-size: $typo-headline-01-m;
@@ -17,6 +18,7 @@
   font-size: $typo-headline-02;
   text-transform: uppercase;
   font-weight: normal;
+  line-height: $line-height-headline-01;
 
   &::after {
     @include -background-color('green-01');
@@ -65,4 +67,9 @@
   font-size: $typo-copy;
   line-height: $line-height-copy;
   font-weight: 700;
+}
+
+@mixin -typo-copy-big {
+  font-size: $typo-copy-big;
+  line-height: $line-height-copy;
 }

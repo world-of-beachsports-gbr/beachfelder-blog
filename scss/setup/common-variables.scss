@@ -14,9 +14,11 @@ $color-palette-red-01:		#cf4135 !default;
 // SIZES
 $typo-headline-01:		rem(25px) !default;
 $typo-headline-01-m:	rem(40px) !default;
+$line-height-headline-01: 1.35 !default;
 
 $typo-headline-02:		rem(30px) !default;
 $typo-headline-02-s:	rem(35px) !default;
+$line-height-headline-02: 1.35 !default;
 
 $typo-headline-03:		rem(28px) !default;
 $typo-headline-03-m:	rem(30px) !default;
@@ -26,6 +28,7 @@ $typo-headline-05:		rem(20px) !default;
 $typo-headline-06:		rem(18px) !default;
 
 $typo-copy:		       	rem(16px) !default;
+$typo-copy-big:		    rem(18px) !default;
 $line-height-copy:		rem(24px) !default;
 
 //CONTENT SIZES
