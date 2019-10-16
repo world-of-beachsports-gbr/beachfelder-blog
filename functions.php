@@ -5,7 +5,7 @@ if ( ! function_exists( 'bfde_setup' ) ) :
 	function bfde_setup() {
 
     require_once( get_template_directory() . '/inc/wp_bem_menu.inc.php' );
-    require_once( get_template_directory() . '/inc/filter.inc.php' );
+    require_once( get_template_directory() . '/inc/filters.inc.php' );
     require_once( get_template_directory() . '/inc/breadcrumb.inc.php' );
     require_once( get_template_directory() . '/inc/author_box.inc.php' );
 
@@ -13,6 +13,7 @@ if ( ! function_exists( 'bfde_setup' ) ) :
 		add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'custom-header' );
+    add_theme_support( 'align-wide' );
 
     set_post_thumbnail_size( 1568, 9999 );
     
@@ -120,7 +121,7 @@ function excerpt( $limit ) {
       $content = implode(" ",$content);
     }
     $content = preg_replace('/[.+]/','', $content);
-    $content = apply_filters('the_content', $content);
+    $content = apply_filters('the_excerpt', $content);
     $content = str_replace(']]>', ']]&gt;', $content);
     return $content;
 }

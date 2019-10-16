@@ -1,12 +1,25 @@
+@import '../../mixins/breakpoint.mixin';
 @import '../../mixins/background-color.mixin';
 @import '../../mixins/text-color.mixin';
 @import '../../mixins/font-size.mixin';
 @import '../../mixins/spacing.mixin';
 @import '../../mixins/display.mixin';
+@import '../../setup/pxtorem';
+
+strong, b {
+  font-weight: 700;
+}
 
 .has-medium-font-size {
   @include -font-primary;
   @include -text-color('blue-02');
+  line-height: 1.35;
+}
+
+.has-large-font-size {
+  @include -font-primary;
+  @include -text-color('blue-02');
+  font-weight: 700;
   line-height: 1.35;
 }
 
@@ -26,14 +39,25 @@
   }
 }
 
+.wp-block-cover, .wp-block-cover-image {
+  min-height: rem(220px);
+
+  @include breakpoint('m') {
+    min-height: rem(300px);
+  }
+}
+
 .wp-block-table {
   @include -font-primary;
   @include -text-color('blue-02');
+  @include -typo-copy;
 
   tr {
     td {
       @include -spacing-inner('top', 10);
       @include -spacing-inner('bottom', 10);
+      @include -spacing-inner('left', 10);
+      @include -spacing-inner('right', 10);
     }
   }
 }
@@ -56,12 +80,12 @@
 
     li {
       @include -font-primary;
-      @include -font-size(16);
+      @include -font-size(18);
       @include -text-color('blue-02');
 
       a {
         @include -font-primary;
-        @include -font-size(16);
+        @include -font-size(18);
         @include -text-color('blue-02');
         @include -spacing-inner('top', 3);
         @include -spacing-inner('bottom', 3);
@@ -99,6 +123,40 @@ main {
         list-style-type: square;
       }
     }
+  }
+
+  p {
+    a {
+      @include -text-color('green-01');
+      text-decoration: underline;
+
+      &:hover {
+        @include -text-color('blue-01');
+        text-decoration: none;
+      }
+    }
+  }
+
+  em {
+    font-style: italic;
+  }
+}
+
+
+.wp-block-quote {
+  @include -background-color('gray-02');
+  @include -spacing-inner('top', 15);
+  @include -spacing-inner('bottom', 30);
+  @include -spacing-inner('left', 30);
+  @include -spacing-inner('right', 30);
+
+  cite {
+    @include -font-primary;
+    @include -spacing-outer(15);
+    @include -text-color('blue-01');
+
+    display: block;
+    font-style: italic;
   }
 }
 

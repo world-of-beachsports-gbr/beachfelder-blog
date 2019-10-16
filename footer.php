@@ -3,27 +3,27 @@
   <?php get_template_part( 'template-parts/sections/section' , 'newsletter' ); ?>
 
   <?php if (!is_404() ): ?>
-    <div class="content">
-      <div class="row">
-        <div class="column column--12 column--s-4 -spacing-outer-100">
-          <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-            <?php get_template_part( 'template-parts/footer/footer', 'widget-1' ); ?>
-          <?php endif; ?>
+    <?php if ( is_active_sidebar( 'sidebar-1' ) || is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) ): ?>
+      <div class="content">
+        <div class="row">
+          <div class="column column--12 column--s-4 -spacing-outer-100">
+            <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+              <?php get_template_part( 'template-parts/footer/footer', 'widget-1' ); ?>
+            <?php endif; ?>
+          </div>
+          <div class="column column--12 column--s-4 -spacing-outer-100">
+            <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+              <?php get_template_part( 'template-parts/footer/footer', 'widget-2' ); ?>
+            <?php endif; ?>
+          </div>
+          <div class="column column--12 column--s-4 -spacing-outer-100">
+            <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+              <?php get_template_part( 'template-parts/footer/footer', 'widget-3' ); ?>
+            <?php endif; ?>
+          </div>
         </div>
-        <div class="column column--12 column--s-4 -spacing-outer-100">
-          <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-            <?php get_template_part( 'template-parts/footer/footer', 'widget-2' ); ?>
-          <?php endif; ?>
-        </div>
-        <div class="column column--12 column--s-4 -spacing-outer-100">
-          <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
-            <?php get_template_part( 'template-parts/footer/footer', 'widget-3' ); ?>
-          <?php else : ?>
-            <?php get_template_part( 'template-parts/footer/footer', 'advertising' ); ?>
-          <?php endif; ?>
-        </div>
-      </div>
-    </div><!-- .content ENDE -->
+      </div><!-- .content ENDE -->
+    <?php endif; ?> 
   <?php endif; ?>
 
   <footer class="footer">

@@ -24,6 +24,8 @@
   
   &__image-container  {
     position: relative;
+    max-height: $item-news-image-container-max-height;
+    overflow: hidden;
     
     &:hover #{$bem-block}__overlay {
       opacity: $item-news-overlay-opacity-hovered;

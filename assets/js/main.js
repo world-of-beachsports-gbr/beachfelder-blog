@@ -30,4 +30,9 @@ jQuery(document).ready(function($) {
     var input = $(this).parents('.input__field');
     form.submit();
   });
+
+  $('a[href="#"]').click(function(e) {
+    e.preventDefault();
+    return false;
+  });
 });

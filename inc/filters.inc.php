@@ -50,4 +50,3 @@ function bfde_add_class_for_h5_tag($content) {
 
 add_filter('the_content', 'bfde_add_class_for_h5_tag', 9999);
 add_filter('the_excerpt', 'bfde_add_class_for_h5_tag', 9999);
-

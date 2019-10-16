@@ -12,6 +12,7 @@
   @include -spacing-inner('right', 25);
 
   border-top: 1px #f3f3f3 double;
+  border-bottom: 1px #f3f3f3 double;
   border-radius: 4px;
 
   &__name {
@@ -36,6 +37,7 @@
       border-radius: 50%;
       float: left;
       margin: 0 20px 10px 0;
+      width: 90px;
     }
   }
 

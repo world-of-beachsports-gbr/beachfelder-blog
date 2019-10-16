@@ -1,3 +1,4 @@
+@import '../../mixins/breakpoint.mixin';
 @import '../../mixins/background-color.mixin';
 @import '../../mixins/text-color.mixin';
 @import '../../mixins/font-size.mixin';
@@ -5,6 +6,7 @@
 @import '../../mixins/spacing.mixin';
 @import '../../mixins/opacity.mixin';
 @import '../../mixins/display.mixin';
+@import '../../setup/pxtorem';
 
 @import 'navigation-main.setup';
 
@@ -23,7 +25,8 @@
     
     &--parent:hover #{$bem-block}__sub-menu {
       @include -opacity(1);
-      z-index: 1;
+      visibility: visible;
+      z-index: 10;
     }
   }
 
@@ -52,30 +55,54 @@
     @include -text-align(left);
 
     position: absolute;
-    top: 25px;
+    top: 30px;
     left: 0;
-    //transform: translateX(-50%);
     border-radius: 3px;
-    z-index: 1;
+    z-index: -1;
     transition: .3s ease-in-out;
-    box-shadow: 5px 5px 10px rgba(0,0,0, .15);
-
+    box-shadow: 0 0 20px rgba(0,0,0, .25);
+    visibility: collapse;
+    
     &::before {
       content: '';
       position: absolute;
-      top: -5px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: -15px;
+      left: 20px;
       width: 0; 
-      height: 0; 
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      
-      border-bottom: 5px solid #fff;
+      height: 0;
+      border-radius: 3px;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid #fff;
+    }
+
+    @include breakpoint('m') {
+      min-width: rem(250px);
     }
 
     &__item {
       @include -display(block);
+      position: relative;
+      overflow: hidden;
+
+      &:not(:first-of-type) {
+        border-top: 1px #f3f3f3 solid;
+      }
+
+      &::before {
+        @include -background-color('green-01');
+        content: '';
+        width: rem(3px);
+        height: 100%;
+        position: absolute;
+        left: -4px;
+        top: 0;
+        transition: .3s;
+      }
+
+      &:hover::before {
+        left: 0;
+      }
     }
 
     &__link {
@@ -83,8 +110,8 @@
       @include -font-primary;
       @include -font-size(16);
       @include -display(block);
-      @include -spacing-inner('top', 15);
-      @include -spacing-inner('bottom', 15);
+      @include -spacing-inner('top', 20);
+      @include -spacing-inner('bottom', 20);
       @include -spacing-inner('left', 30);
       @include -spacing-inner('right', 80);
 
