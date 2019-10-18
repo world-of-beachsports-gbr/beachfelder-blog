@@ -2428,6 +2428,25 @@ a {
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%); }
 
+.textarea {
+  display: inline-block;
+  width: 100%; }
+  .textarea__field {
+    font-family: 'PTSansRegular', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    color: #798796;
+    font-size: 16px;
+    font-size: 1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    width: 100%;
+    outline: none;
+    resize: none;
+    border: 1px #f3f3f3 solid; }
+
 .navigation-main {
   text-align: center;
   height: 100%; }

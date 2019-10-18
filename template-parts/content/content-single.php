@@ -66,6 +66,11 @@ $wpex_query = new wp_query( $args );
 ?>
 <div class="row">
   <div class="column column--12 -spacing-outer-90">
+    <hr class="divider">
+  </div>
+</div>
+<div class="row">
+  <div class="column column--12 -spacing-outer-90">
     <h3 class="-typo-headline-03 -text-color-blue-01 -font-secondary">Das könnte dich auch interessieren</h3>
   </div>
 </div>

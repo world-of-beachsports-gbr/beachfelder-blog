@@ -7,7 +7,7 @@ if ( ! function_exists( 'bfde_setup' ) ) :
     require_once( get_template_directory() . '/inc/wp_bem_menu.inc.php' );
     require_once( get_template_directory() . '/inc/filters.inc.php' );
     require_once( get_template_directory() . '/inc/breadcrumb.inc.php' );
-    require_once( get_template_directory() . '/inc/author_box.inc.php' );
+    //require_once( get_template_directory() . '/inc/author_box.inc.php' );
 
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'title-tag' );

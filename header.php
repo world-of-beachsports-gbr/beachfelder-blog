@@ -14,7 +14,7 @@
 	<html <?php language_attributes(); ?>>
 		<head>
 			<meta charset="<?php bloginfo( 'charset' ); ?>" />
-			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 			<?php wp_head(); ?>
 		</head>
 		<body <?php body_class(); ?>>
@@ -30,10 +30,10 @@
                 <?php get_template_part( 'template-parts/header/header', 'search' ); ?>
               </div>
               <div class="column column--12 column--xs-2 column--s-3 -text-align-right -hide--xxs-xs -hide--xs-s">
-                  <a href="#" class="link-icon   ">
+                  <!-- <a href="#" class="link-icon">
                     <span class="link-icon__icon icon icon--user link-icon__icon--user"></span>
-                  </a>
-                  <a href="../blog-beachfelder/kontakt/" class="link-icon">
+                  </a> -->
+                  <a href="<?= home_url(); ?>/kontakt/" class="link-icon">
                     <span class="link-icon__icon icon icon--mail link-icon__icon--user"></span>
                   </a>
               </div>
