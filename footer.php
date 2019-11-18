@@ -37,10 +37,10 @@
       <?php endif; ?>
       <div class="row ">
         <div class="column column--12">
-          <a href="https://www.instagram.com/beachfelder.de/" target="_blank" class="link-icon -spacing-outer-20 link-icon--has-shadow">
+          <a href="https://www.instagram.com/beachfelder.de/" target="_blank" rel="noopener noreferrer" class="link-icon -spacing-outer-20 link-icon--has-shadow">
             <span class="link-icon__icon icon icon--instagram link-icon__icon--instagram"></span>
           </a>
-          <a href="http://facebook.com/beachfelder.de" target="_blank" class="link-icon -spacing-outer-20 link-icon--has-shadow">
+          <a href="http://facebook.com/beachfelder.de" target="_blank" rel="noopener noreferrer" class="link-icon -spacing-outer-20 link-icon--has-shadow">
             <span class="link-icon__icon icon icon--facebook link-icon__icon--facebook"></span>
           </a>
         </div>

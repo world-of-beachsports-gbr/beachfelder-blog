@@ -135,3 +135,12 @@ if (!is_admin()) {
   }
   add_filter('pre_get_posts','wpb_search_filter');
 }
+
+
+//ASYNC JS LOADING
+function defer_parsing_of_js ( $url ) {
+  if ( FALSE === strpos( $url, '.js' ) ) return $url;
+  if ( strpos( $url, 'jquery.js' ) ) return $url;
+  return str_replace( ' src', ' defer src', $url );
+}
+add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );

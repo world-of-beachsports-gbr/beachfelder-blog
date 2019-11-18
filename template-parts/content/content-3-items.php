@@ -2,7 +2,7 @@
   <div class="item-news ">
     <div class="item-news__image-container">
       <a href="<?php the_permalink(); ?>">
-        <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); ?>
+        <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'medium'); ?>
         <img src="<?= $featured_img_url; ?>" alt="<?php the_title(); ?>" class="item-news__image">
         <div class="item-news__date"><?= get_the_date('d.m.Y'); ?></div>
         <div class="overlay item-news__overlay">

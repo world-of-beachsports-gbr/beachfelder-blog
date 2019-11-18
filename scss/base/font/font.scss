@@ -8,6 +8,7 @@
   url('../font/oswald-regular/Oswald-regular.woff') format("woff"),
   url('../font/oswald-regular/Oswald-regular.ttf') format("truetype"),
   url('../font/oswald-regular/Oswald-regular.svg#OswaldRegular') format("svg");
+  font-display: swap;
 }
 
 @font-face {
@@ -17,6 +18,7 @@
   url('../font/pt-sans-regular/PT-Sans-regular.woff') format("woff"),
   url('../font/pt-sans-regular/PT-Sans-regular.ttf') format("truetype"),
   url('../font/pt-sans-regular/PT-Sans-regular.svg#PTSansRegular') format("svg");
+  font-display: swap;
 }
 
 .-font {
